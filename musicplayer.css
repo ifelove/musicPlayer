@@ -1,0 +1,159 @@
+
+*::after,*::before{
+    padding: 0;
+    margin: 0;
+}
+
+
+body{display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;}
+.container{background:var(--white);
+    width: 250px;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 25px;
+    box-shadow: 0px 6px 15px 4px;
+    border-radius: 15px;}
+img{width: 100%;height: 100%;object-fit: cover;border-radius: 6px;}
+
+.image-container{
+    width: 100%;
+    height: 256px;
+    margin-top: 25px;
+    box-shadow: 0px 6px 25px 4px;
+    border-radius: 10px;
+overflow: hidden;}
+
+.container i{cursor: pointer;}
+.top-bar, .controls,.music-list .header,.music-list li{display: flex;
+    align-items: center;
+    justify-content: space-between;}
+
+    .top-bar i{font-size: 30px;
+    color: rgb(110, 119, 116);}
+
+    .top-bar span{font-size: 18px;color: rgb(110, 119, 116) ;}
+
+    .songs-details{text-align: center;
+        margin: 10px 0;
+         margin: 30px 0; 
+        color: rgb(110, 119, 116)}
+    .songs-details .name{font-size: 21px;}
+    .songs-details .artist{opacity: 0.9;
+        font-size: 18px;}
+.progress-container{height: 6px;width: 100%;
+background:rgb(243, 237, 237);border-radius: 50px;
+cursor: pointer;}
+
+.progress-bar{width: 0%;height: 
+    inherit;border-radius: inherit;
+    background:linear-gradient(90deg,pink, violet);
+position: relative;}
+
+    .progress-bar::before{content: "";
+        position: absolute;height: 12px;
+        width: 12px;background:linear-gradient(90deg,pink, violet);
+        transform: translateY(-50%);border-radius: inherit;
+        right: -5px;
+    top: 50%;
+opacity:0 ;
+transition: opacity 0.2s ease;}
+
+.progress-container:hover .progress-bar::before{opacity: 1;}
+
+.timer{display: flex;
+    align-items: center;
+    justify-content: space-between;
+margin-top: 2px;}
+
+.timer span{font-size: 13px;}
+
+.controls{margin:40px 0 5px 0;}
+
+.controls i{font-size: 28px;
+    user-select:none;
+    background:linear-gradient(90deg,pink, violet);
+background-clip:text;
+-webkit-background-clip:text;
+-webkit-text-fill-color: transparent;}
+.controls i:nth-child(2),.controls i:nth-child(4){font-size: 43px;}
+
+.controls #prev,.controls #next{margin-right: -13px;}
+
+.controls .play-pause{height:54px ;
+    width:54px ;
+     background:linear-gradient(90deg,rgb(180, 172, 173), rgb(228, 211, 228));
+    box-shadow: 0px 0px 5px  4px;
+border-radius: 50%;
+display: flex;
+justify-content: center;
+align-items: center;}
+
+.play-pause i{height:43px ;width:43px ;
+    background:inherit;border-radius:inherit;
+    background-clip:text;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color: transparent;
+line-height: 43px;
+text-align: center;
+position: relative;
+border-radius:inherit;}
+
+.play-pause::before{content: ""; 
+     background:linear-gradient(90deg,pink, violet);
+height: 43px;
+width: 43px;
+border-radius:50%;
+position: absolute;}
+
+.music-list{
+    position: absolute;
+    left:0;
+    bottom: -55%;
+    opacity: 0;
+    pointer-events: none;
+    padding: 15px 0px;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0px -5px 10px black;
+width: 100%;
+transition: all 0.14s ease-out;
+}
+.music-list.show{bottom: 0;
+    opacity: 1;
+    pointer-events: auto;}
+
+.music-list .header .row{display: flex;
+    align-items: center;
+    font-size: 19px;
+    color: rgb(48, 46, 46);}
+
+    .header .row i{cursor: default;}
+    .header .row span{margin-left: 5px;}
+    .header #close {font-size: 22px; color: rgb(48, 46, 46);margin: 10px;}
+
+    .music-list ul{margin: 10px 10px;max-height: 260px;
+    overflow: auto;}
+    .music-list ul::-webkit-scrollbar{width: 0px;}
+
+    .music-list ul li{list-style: none;
+        cursor: pointer;
+    border-bottom: 1px solid #e5e5e5;
+padding-bottom: 10px;
+color: rgb(48, 46, 46);
+margin-bottom:5px ;}
+
+.music-list ul li:last-child{border-bottom: 0px;}
+
+.music-list ul li .row span{font-size: 17px;}
+
+li .row p{opacity: 0.9;}
+
+li .audio-duration{font-size: 16px;}
+
+ul li.playing{
+    color: violet;
+    pointer-events: none;
+}

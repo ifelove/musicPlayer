@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music player</title>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="musicplayer.css">
+
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <i class='bx bx-chevron-down'></i>
+        <span>Now Playing</span>
+        <i class='bx bx-dots-horizontal'></i>
+    </div>
+<div class="image-container">
+    <img src="listImage/burnaft.jpeg" >
+</div>
+<div class="songs-details">
+<p class="name"> Wizkid-  Daddy Yoo</p>
+<p class="artist">Wizkid</p>
+</div>
+<div class="progress-container">
+    <div class="progress-bar">
+    </div>
+    <div class="timer">
+        <span class="currentTime">2:30</span>
+        <span class="duration">0:38</span>
+    </div>
+    <audio src="" class="main-audio"></audio>
+</div>
+
+<div class="controls">
+    <i id="repeat-plist" class="material-icons" title="playlist looped">
+        repeat</i>
+
+        <i id="prevlist" class="material-icons">
+            skip_previous</i>
+            <div class="play-pause"> <i class="material-icons">
+                play_arrow</i></div>
+            
+                <i id="nextlist" class="material-icons">
+                    skip_next</i>
+                    <i id="more-music" class="material-icons">
+                        queue_music</i>  
+</div>
+<div class="music-list">
+    <div class="header">
+        <div class="row">
+            <i class="material-icons">
+                queue_music</i>  
+                <span>music-list</span>
+        </div>
+        <i id="close" class="material-icons">
+            close</i>  
+    </div>
+
+<ul class="list-section">
+    
+</ul>
+</div>
+
+
+<script src="musicplayer.js"></script>
+</body>
+</html>
